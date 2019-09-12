@@ -1,14 +1,13 @@
 const path = require('path');
 const log = require('./log');
-const fs = require('fs');
 
-const solutions = module.exports.solutions = {};
+const solutions = {};
 
-module.exports.genImportDeclare = function(names, tsFilePath, autoMock) {
+function genImportDeclare(names, tsFilePath, autoMock) {
   const mws = {};
   const npmImports = [];
   const proImports = [];
-  names.forEach(name => {
+  names.forEach((name) => {
     if (!solutions[name]) {
       return;
     }
@@ -17,7 +16,7 @@ module.exports.genImportDeclare = function(names, tsFilePath, autoMock) {
     if (autoMock) {
       pipes = pipes.concat(solutions[name].mock || []);
     }
-    pipes.forEach(p => {
+    pipes.forEach((p) => {
       if (mws[p.name]) return;
       // relate path or npm path
       if (p.path.startsWith('.')) {
@@ -29,24 +28,30 @@ module.exports.genImportDeclare = function(names, tsFilePath, autoMock) {
         mws[p.name] = p.path;
         npmImports.push(`import ${p.name} from '${mws[p.name]}';`);
       }
-    })
+    });
   });
-  return {imports: [].concat(npmImports, proImports), mws: Object.keys(mws)};
-};
+  return { imports: [].concat(npmImports, proImports), mws: Object.keys(mws) };
+}
 
-const setSolutions = module.exports.setSolutions = function(solutionFiles) {
+function setSolutions(solutionFiles) {
   for (const customSol of solutionFiles) {
     try {
+      // eslint-disable-next-line import/no-dynamic-require
       const userDefined = require(customSol);
       Object.assign(solutions, userDefined.default || userDefined);
-      log('已加载solution: ' + customSol);
+      log(`已加载solution: ${customSol}`);
     } catch (e) {
-      log('未加载' + customSol)
+      log(`未加载${customSol}`);
     }
   }
-};
+}
 
 setSolutions([
-  '@ali/shimmer-runtime/lib/loader/solution.js',
-  process.cwd() + path.sep + 'api.config.js',
+  `${process.cwd() + path.sep}api.config.js`,
 ]);
+
+module.exports = {
+  solutions,
+  genImportDeclare,
+  setSolutions,
+};
