@@ -1,6 +1,6 @@
 {
   "name": "@recore/solution",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "recore solution",
   "main": "src/index.js",
   "scripts": {
@@ -96,8 +96,8 @@
     "prerender-spa-plugin": "^3.4.0",
     "typescript": "^3.4.5"
   },
-  "publishConfig":{
+  "publishConfig": {
     "access": "public",
-    "registry":"https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   }
 }

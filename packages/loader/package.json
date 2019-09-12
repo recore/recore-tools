@@ -1,6 +1,6 @@
 {
   "name": "@recore/recore-loader",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Visionx loader for Webpack",
   "main": "src/index.js",
   "repository": {
@@ -68,8 +68,8 @@
     "sinon": "^6.3.1",
     "webpack": "^4.16.1"
   },
-  "publishConfig":{
+  "publishConfig": {
     "access": "public",
-    "registry":"https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   }
 }
