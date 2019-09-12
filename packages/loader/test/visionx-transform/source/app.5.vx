@@ -1,0 +1,3 @@
+<!--5-->
+<input x-model={where} type="text"/>
+<input x-model="a.b.c" type="text"/>

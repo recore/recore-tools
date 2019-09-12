@@ -1,0 +1,2 @@
+<!-- x-show -->
+<div attr={123} attr2={abc + 25 > 0 ? true : false} x-show={!!isOK}>{hello}</div>

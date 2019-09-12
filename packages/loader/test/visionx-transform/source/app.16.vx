@@ -1,0 +1,11 @@
+<!-- action binding -->
+<x @click="a" />
+<x @click="[b, c]" />
+<x @click="d.e" />
+<x @click="[() => f, function(){}, g, h(), false ? i() : j(), k.l]" />
+<x @click={m} />
+<x @click={[n, o]} />
+<x @click={p.q.r} />
+<x @click={s.t($event, x)} />
+<x @click={[() => u, function v(){}, w, x(), false ? y() : z(), A.B]} />
+<x @click={q.bind(this)} />

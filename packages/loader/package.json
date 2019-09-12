@@ -1,0 +1,72 @@
+{
+  "name": "@ali/recore-loader",
+  "version": "1.2.0-beta.2",
+  "description": "Visionx loader for Webpack",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:recore/recore-loader.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "loader",
+    "webpack-loader",
+    "replace",
+    "string-replace",
+    "regex-replace"
+  ],
+  "scripts": {
+    "lint": "eslint src --fix",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha test/**/*.test.js",
+    "precommit": "lint-staged",
+    "prepublish": "npm run test"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "my-prettier": "^0.8.0",
+    "vx-ast-parser": "^0.8.0",
+    "@babel/core": "^7.1.0",
+    "@babel/generator": "^7.0.0",
+    "@babel/parser": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/template": "^7.0.0",
+    "@babel/traverse": "^7.0.0",
+    "@babel/types": "^7.0.0",
+    "agentkeepalive": "^3.5.1",
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "loader-utils": "^1.1.0",
+    "memory-fs": "^0.4.1",
+    "rollup": "^0.63.5",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "webpack-log": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/babel-types": "^7.0.4",
+    "babel-eslint": "^8.2.6",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "loader-runner": "^2.3.0",
+    "mocha": "^5.0.1",
+    "nyc": "^13.0.1",
+    "rimraf": "^2.6.2",
+    "sinon": "^6.3.1",
+    "webpack": "^4.16.1"
+  }
+}

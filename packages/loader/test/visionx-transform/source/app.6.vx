@@ -1,0 +1,2 @@
+<!--6-->
+<input @click="wher" type="text" @keyUp.enter="add"  />

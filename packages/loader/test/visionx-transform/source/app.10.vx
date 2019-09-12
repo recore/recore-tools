@@ -1,0 +1,7 @@
+
+
+<!-- 10 -->
+<div x-for={heros} x-each="hero" x-area>
+  Hello {hero}
+  <input x-model={hero} />
+</div>

@@ -1,0 +1,3 @@
+
+<!-- 11 -->
+<div x-for={awef} x-each={abc} />

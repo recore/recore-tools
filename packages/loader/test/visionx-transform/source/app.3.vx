@@ -1,0 +1,9 @@
+<!-- 3 -->
+<div x-if={abc}></div>
+<div x-if={abc}></div>
+<div x-else-if={abc}></div>
+
+{<div x-else-if={2}></div>}
+
+<div x-else-if={abc}></div>
+<div x-else={abc}></div>

@@ -1,0 +1,4 @@
+<!--4-->
+<div x-for={heros} x-each="hero" x-if={hero}>
+  Hello {hero}
+</div>

@@ -1,0 +1,9 @@
+<!-- 9 -->
+<block x-if={abc}>
+  Hello  {abc}  World
+  <div/>
+</block>
+<block x-for={["abc", "awef"]} x-each="hero">
+  Hello  {hero}  World
+  <div/>
+</block>

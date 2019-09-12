@@ -1,0 +1,2 @@
+<!--7-->
+{1 ? <input x-if={yes} x-model={abc} /> : <Button x-for={data} x-if={item.yes} @click="route">跳转</Button>}

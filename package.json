@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.13.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "publishConfig":{
+    "access": "public",
+    "registry":"https://registry.npm.alibaba-inc.com"
+  }
+}
