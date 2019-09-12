@@ -1,0 +1,44 @@
+- 0.0.6-beta4
+  - ✨类型声明支持interface写法
+- 0.0.6-beta3
+  - 🐞fix 相对项目路径异常
+- 0.0.6-beta2
+  - ✨项目自定义 solution 位置改为项目根目录 api.config.js
+  - ✨未定义的 @kind 会作为 custom 处理, 方便运行时注入
+- 0.0.6-beta1
+  - 🐞解决ast.fromCode报错问题
+- 0.0.5
+  - 内置shimmer-runtime作为middleware
+- 0.0.5-beta6
+  - ✨补充一套custom solution, 提供运行时注入实际请求
+  - ✨数据校验优化: 配置 出错时不中断(breakPipe=false)也没有回调函数(onError=null),则直接跳过校验
+  - ✨注释优化: 规则和comment写法变为  \`rule\` comment, [例子](http://gitlab.alibaba-inc.com/javaer.ljw/doc-api/blob/master/test/test.api.ts#L48)
+- 0.0.5-beta5
+  - 🐞参数列表枚举项正确识别
+  - 🐞namespace内嵌对象时key解析错误
+  - ⚡️不再生成declare class
+  - ✔︎ 实现middleware: 基础请求ajax/jsonp/mock; 方法datacheck/paramcheck/resformat
+- 0.0.5-beta4
+  - ✨依照[架构](https://yuque.antfin-inc.com/docs/share/72113472-5b65-460e-9b18-f91127238458)整理完成
+  - ✨支持api.ts文件中同名函数校验
+  - ✨支持命名空间
+  - ✨优化代码结构, 避免无用的import
+  - type/class仅当原类型export时才会加上export修饰
+  - 类型的数据结构优化,支持字面量
+  - 字面量支持mock
+- 0.0.4
+  - 🐞复杂嵌套的类型mock处理可能出错
+- 0.0.3 beta 6
+ - ✨🐞实现类函数列表处理优化
+ - ✨mock控制台打印req res
+ - ✨明确类型系统数据结构并支持更多类型写法
+ - ✨boolean类型支持mock rule概率值
+- 0.0.3 beta2
+ - @kind custom @method xxx 支持简写为@kind xxx
+- 0.0.3 beta1
+ - 支持写多个declare class
+- 0.0.3 beta0
+ - 不限定ts文件内容，只自动实现declare的class
+- 0.0.2 beta6
+ - 🐞fix datacheck error message
+ - ✨more literal inline type support

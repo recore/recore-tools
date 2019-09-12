@@ -1,0 +1,32 @@
+{
+  "name": "@ali/api-loader",
+  "version": "0.0.6-beta5",
+  "description": "an awesome ts-api translator",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/example.js"
+  },
+  "repository": {
+    "url": "http://gitlab.alibaba-inc.com/javaer.ljw/doc-api"
+  },
+  "files": [
+    "src",
+    "index.js"
+  ],
+  "author": "javaer.ljw",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "randexp": "^0.5.3"
+  },
+  "devDependencies": {
+    "loader-utils": "^1.2.3",
+    "typescript": "^3.2.4",
+    "lint-staged": "^7.1.2",
+    "tslib": "^1.9.3",
+    "tslint": "^5.10.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npm.alibaba-inc.com"
+  }
+}
