@@ -1,6 +1,6 @@
 const { getOptions } = require('loader-utils');
 const babelGenerate = require('@babel/generator').default;
-const myFormat = require('@ali/my-prettier');
+const myFormat = require('my-prettier');
 const transform = require('./transform');
 const {
   terminalFormatter,

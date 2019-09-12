@@ -2,13 +2,13 @@ const { resolve } = require('path');
 const fs = require('fs');
 const generator = require('./generator');
 
-const RECORE_OUTPUT_FILENAME = 'recore.umd.min.js';
+const RECORE_OUTPUT_FILENAME = 'recore.min.js';
 
 
 class RecoreHelper {
   constructor(context) {
     this.context = context;
-    this.modulePath = resolve(context, 'node_modules/@ali/recore');
+    this.modulePath = resolve(context, 'node_modules/@recore/fx');
   }
 
   // 获取 recore 版本
@@ -20,7 +20,7 @@ class RecoreHelper {
 
   // 找到输出 recore 的文件地址
   findRecoreOutputFilePath() {
-    const recoreUmdFilePath = require.resolve(resolve(this.modulePath, `build/${RECORE_OUTPUT_FILENAME}`));
+    const recoreUmdFilePath = require.resolve(resolve(this.modulePath, `umd/${RECORE_OUTPUT_FILENAME}`));
     return recoreUmdFilePath;
   }
 

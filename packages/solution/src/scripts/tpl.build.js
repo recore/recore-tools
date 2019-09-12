@@ -43,9 +43,6 @@ const makePkgJson = () => {
     version: pkg.version,
     description: pkg.description,
     repository: pkg.registry,
-    publishConfig: {
-      registry: 'http://registry.npm.alibaba-inc.com',
-    },
     files: [
       'proj',
       'nowa-questions.js',
@@ -62,7 +59,7 @@ const copyQuesFile = () => {
 const all = async () => {
   await clear();
   await copy('src', { isDir: true });
-  ['.editorconfig', '.eslintignore', '.eslintrc', '.prettierrc', 'tsconfig.json', 'tslint.json'].forEach(async (filename) => {
+  ['.editorconfig', '.eslintignore', '.eslintrc', '.prettierrc', 'tsconfig.json'].forEach(async (filename) => {
     await copy(filename);
   });
   await copy('.gitignore', { rename: '~.gitignore.tpl' });
@@ -91,9 +88,7 @@ const all = async () => {
     replaceFunc: () => "appName: '{{ appName }}'",
   };
   await tpl('index.html', [htmlReplaceLogic]);
-  await tpl('prerender.html', [htmlReplaceLogic]);
   await tpl('package.json', [jsonNameReplaceLogic, jsonDescReplaceLogic]);
-  await tpl('abc.json', [jsonNameReplaceLogic]);
   await tpl('README.md', [mdReplaceLogic]);
   await tpl('recore.config.js', [configReplaceLogic]);
   makePkgJson();

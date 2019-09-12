@@ -1,4 +1,4 @@
-import { runApp } from '@ali/recore';
+import { runApp } from '@recore/fx';
 
 runApp({}); // 使用默认的 history
 

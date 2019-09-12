@@ -1,7 +1,6 @@
 const { join } = require('path');
 const {
   createLoaderConfig,
-  getRecoreAPILoader,
   getStyleLoader,
   RECORE_BABEL_LOADER,
   RECORE_TYPESCRIPT_LOADER,
@@ -75,12 +74,13 @@ module.exports = function Loaders(argv) {
         },
       ],
     },
+    /*
     {
       test: /(\.api|\.type|xux-types(?:.+))\.ts$/,
       use: [
         getRecoreAPILoader(mode),
       ],
-    },
+    },*/
     {
       test: /\.(png|jpg|jpeg|webp|gif|ttf|eot|woff)(\?.*)?$/i,
       use: [staticLoader],
@@ -118,10 +118,11 @@ module.exports = function Loaders(argv) {
         },
       }),
     },
+    /*
     {
       test: sassRegex,
       use: getStyleLoader(mode, 'sass-loader', deep),
-    },
+    },*/
   ];
   return loaders;
 };

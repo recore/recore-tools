@@ -16,12 +16,12 @@ function create(prjName) {
     } else if (resourcePath.startsWith('./node_modules')) {
       // 处理项目 node_modules
       aliasPath = join(prjName || 'project', resourcePath);
-    } else if (resourcePath.includes('/nowa-recore-solution')) {
+    }/* else if (resourcePath.includes('/nowa-recore-solution')) {
       // 处理 recore-solution
       aliasPath = resourcePath.replace(/.*nowa-recore-solution/, 'nowa-recore-solution');
     } else if (resourcePath.includes('webpack')) {
       aliasPath = join('nowa-recore-solution', resourcePath);
-    }
+    }*/
     return `webpack:///${aliasPath}`;
   };
 }

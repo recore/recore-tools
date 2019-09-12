@@ -1,7 +1,7 @@
 {
-  "name": "@recore/nowa-solution",
-  "version": "1.6.10-beta.0",
-  "description": "recore nowa solution",
+  "name": "@recore/solution",
+  "version": "0.8.0",
+  "description": "recore solution",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
@@ -32,7 +32,6 @@
     ]
   },
   "dependencies": {
-    "@alifd/next-theme-loader": "^1.3.1",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
@@ -73,10 +72,8 @@
     "less-loader": "^5.0.0",
     "loader-utils": "^1.1.0",
     "mini-css-extract-plugin": "^0.4.1",
-    "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "rimraf": "^2.6.3",
-    "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "uglifyjs-webpack-plugin": "^1.2.7",

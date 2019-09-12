@@ -6,7 +6,7 @@ const traverse = babelTraverse.default;
 const { Scope } = babelTraverse;
 const generate = require('@babel/generator').default;
 const types = require('@babel/types');
-const parser = require('@ali/vx-ast-parser');
+const parser = require('vx-ast-parser');
 const { hasOwnProperty } = require('../../lib/util');
 
 const {

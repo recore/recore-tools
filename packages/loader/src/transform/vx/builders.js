@@ -10,8 +10,8 @@ const S_EVENT = '$event';
 const S_VIEW_GETTER = '$';
 
 const buildStyleDisplayNode = template("TEST ? '' : 'none'");
-const buildFlowNode = template('[() => { return TEST }, () => { return NODE }]');
-const buildDefaultFlowNode = template('[true, () => { return NODE }]');
+const buildFlowNode = template(`[(${S_AREA}) => { return TEST }, (${S_AREA}) => { return NODE }]`);
+const buildDefaultFlowNode = template(`[true, (${S_AREA}) => { return NODE }]`);
 const buildSingleFlowNode = template('TEST ? NODE : null');
 const buildExprNode = template(`${S_AREA}.expr(ID, (${S_SCOPE},${S_AREA}) => { return EXPR })`);
 const buildFlows = template(`${S_AREA}.flows(FLOWS)`);
@@ -23,8 +23,8 @@ function buildArea({ NODE, VIRTUAL = false }) {
   }
   return buildAreaNormal({ NODE });
 }
-const buildNormalLoop = template(`${S_AREA}.loop(AID, DATA, DELEGATE)`);
-const buildVirutalLoop = template(`${S_AREA}.loop(AID, DATA, DELEGATE, true)`);
+const buildNormalLoop = template(`${S_AREA}.loop(AID, (${S_AREA}) => { return DATA }, DELEGATE)`);
+const buildVirutalLoop = template(`${S_AREA}.loop(AID, (${S_AREA}) => { return DATA }, DELEGATE, true)`);
 function buildLoop({
   AID, DATA, DELEGATE, VIRTUAL = false,
 }) {
@@ -96,8 +96,8 @@ function buildRouterViewNode({ VID, PROPS }) {
   });
 }
 
-const buildActionNormal = template(`${S_SCOPE}._action(ACTION)`);
-const buildActionWithModifiers = template(`${S_SCOPE}._action([xModifiers(MODIFIERS), ACTION])`);
+const buildActionNormal = template(`${S_SCOPE}.${S_ACTION}(ACTION)`);
+const buildActionWithModifiers = template(`${S_SCOPE}.${S_ACTION}([xModifiers(MODIFIERS), ACTION])`);
 
 function buildAction({ ACTION, MODIFIERS }) {
   if (MODIFIERS) {

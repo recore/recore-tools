@@ -4,10 +4,8 @@ const { default: template } = require('@babel/template');
 const t = require('@babel/types');
 const { getOptions } = require('loader-utils');
 const findAppEntry = require('./find-app-entry');
-const generateSpmFuncAst = require('./generate-spm-function-ast');
 const { boot: sharedBoot } = require('../share');
 const injectImportApp = require('./inject-import-app');
-
 
 module.exports = function processChunk(source) {
   this.cacheable();
@@ -53,25 +51,8 @@ module.exports = function processChunk(source) {
     RECORE_VALUE: t.identifier('__RECORE__'),
   }));
 
-  if (spmA && domain) {
-    // 将信息写入共享内存
-    sharedBoot.write({ spmA, domain });
-
-    // 将 SPM AST 插入到最后一句 import 的后面
-    const spmFuncAst = generateSpmFuncAst(spmA);
-    const LastImportDeclarationIndex = ast.program.body
-      .map(item => item.type)
-      .reverse()
-      .findIndex(item => item === 'ImportDeclaration');
-    ast.program.body = [
-      ...ast.program.body.slice(0, LastImportDeclarationIndex),
-      spmFuncAst[1],
-      ...ast.program.body.slice(LastImportDeclarationIndex),
-    ];
-  }
-
   ast.program.body.unshift(template('import "PUBLIC_PATH";', parserConfig)({
-    PUBLIC_PATH: t.stringLiteral('@ali/nowa-recore-solution/src/recore-public-path'),
+    PUBLIC_PATH: t.stringLiteral('@recore/solution/src/recore-public-path'),
   }));
 
   const { code, map } = generate(ast, { sourceMaps: true, sourceFileName: resourcePath });

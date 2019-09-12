@@ -7,8 +7,4 @@ __fixture__
 dist
 build
 node_modules
-xdev-test
-ac-hello-world
-vc-hello
-ve-control
 gulpfile.js

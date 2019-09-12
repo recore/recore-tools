@@ -3,7 +3,6 @@ const getVariableName = require('../../lib/get-variable-name');
 // const normalizePath = require('../../lib/normalize-path');
 const { VXEntryDetector, RouterEntryDetector, FileDetector } = require('../../lib/detector/');
 const { judgeIsVXEntry, normalizeRouteMain } = require('../../lib/util');
-const RegisterHelper = require('./register-helper');
 
 const varPrefix = 'RR'; // 变量前缀 RecoreRouter
 
@@ -154,9 +153,9 @@ class Codes {
     let codes = [];
 
     if (!has404) {
-      codes.push("import { createRouter, createDynamicLoader } from '@ali/recore';\n");
+      codes.push("import { createRouter, createDynamicLoader } from '@recore/fx';\n");
     } else {
-      codes.push("import { createRouter, createDynamicLoader, RoutePage404 } from '@ali/recore';\n");
+      codes.push("import { createRouter, createDynamicLoader, RoutePage404 } from '@recore/fx';\n");
     }
 
     if (hooks) {
@@ -204,11 +203,8 @@ class Codes {
     codes.push('};\n');
 
     // 处理 routes 配置
-    // 处理 spmB 的配置
-    const helper = new RegisterHelper();
     const source = JSON.stringify({
       ...routesConfig,
-      routes: await helper.run(routesConfig.routes),
     }, null, '  ');
     codes.push(`const routesConfig = ${source};\n`);
 

@@ -7,7 +7,6 @@ const { resolve, join } = require('path');
 const { removeSync } = require('fs-extra');
 
 const BaseCondfig = require('./webpack.base');
-const UXCoreAnalysis = require('../lib/uxcore-analysis');
 const MultiModules = require('../lib/multi-modules');
 
 // const RecoreHomepagePlugin = require('../plugins/recore-homepage');
@@ -28,8 +27,6 @@ const {
 
 const PROJECT_PATH = process.env.BUILD_WORK_DIR || process.cwd();
 logger.debug('PROJECT_PATH: ', PROJECT_PATH);
-
-const uxcoreAnalysis = new UXCoreAnalysis(PROJECT_PATH);
 
 
 module.exports = async function WebpackOnline(args = {}) {
@@ -154,9 +151,7 @@ module.exports = async function WebpackOnline(args = {}) {
         __MOCK__: 'false',
         __mock__: 'false',
         __DEV__: 'false',
-        __RECORE__: JSON.stringify({
-          lib: uxcoreAnalysis.run('sync'),
-        }),
+        __RECORE__: JSON.stringify({}),
       })),
 
       new MiniCssExtractPlugin({

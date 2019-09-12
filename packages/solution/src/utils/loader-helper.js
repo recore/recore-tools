@@ -29,7 +29,7 @@ function createLoaderConfig(indicator, typescript = false) {
     const loaders = [
       RECORE_BABEL_LOADER,
       {
-        loader: '@ali/recore-loader',
+        loader: '@recore/recore-loader',
         options: parseQuery(resourceQuery),
       },
     ];
@@ -57,6 +57,7 @@ function getStyleLoader(mode, preProcessor, deep = {}) {
     ];
   if (preProcessor) {
     if (preProcessor === 'sass-loader') {
+      /*
       const scss = [];
       Object.keys(deep.themeConfig).forEach((key) => {
         scss.push(`$${key}: ${deep.themeConfig[key]}`);
@@ -72,7 +73,7 @@ function getStyleLoader(mode, preProcessor, deep = {}) {
         options: {
           theme: deep.themePackage,
         },
-      });
+      });*/
     } else {
       loaders.push(preProcessor);
     }

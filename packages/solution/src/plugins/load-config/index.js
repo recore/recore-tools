@@ -8,7 +8,7 @@ class LoadConfigPlugin {
       try {
         const content = require(path); // eslint-disable-line
         return Object.assign({}, content, {
-          solution: '@ali/nowa-recore-solution',
+          solution: '@recore/solution',
         });
       } catch (err) {
         if (err.code !== 'MODULE_NOT_FOUND') {
@@ -17,7 +17,7 @@ class LoadConfigPlugin {
         logger.warn('No Recore configuration. FALLBACK');
         logger.debug(err);
         return {
-          solution: '@ali/nowa-recore-solution',
+          solution: '@recore/solution',
         };
       }
     });
