@@ -750,7 +750,7 @@ function transformJSXElement(elementAST, bindings = null, forceArea = false, inE
     node = buildLoop({
       AID,
       DATA: buildExprNode({
-        ID: generateSymbol('e'),
+        ID: types.stringLiteral(generateSymbol('e')),
         EXPR: parseExpression(DATA, bindings),
       }),
       DELEGATE: buildDelegate({
