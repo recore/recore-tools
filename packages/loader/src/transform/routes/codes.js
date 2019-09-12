@@ -110,34 +110,6 @@ class Codes {
     }
   }
 
-  /**
-   * 生成代码样例
-   *
-    import { createRouter, createDynamicLoader } from '@ali/recore';
-
-    // - settings/index.vx
-    // - settings.vx
-    // - settings/settings.vx
-    import Settings from "@ali/recore-loader?entry!./pages/settings"
-    import App from "@ali/recore-loader?entry!./app"
-
-    var pagesMap = {
-      "./pages/settings": Settings,
-      "./app": App,
-    };
-
-    var routesConfig = {
-      baseDir: './pages',
-      "routes": [
-        {
-          "main": "./settings",
-          "path": "/settings"
-        },
-      ]
-    };
-
-    export default createRouter(routesConfig, pagesMap);
-   */
   async toCodes() {
     // 解析代码
     await this.parseCodes();

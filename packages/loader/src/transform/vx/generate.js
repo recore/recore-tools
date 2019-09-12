@@ -70,7 +70,7 @@ function generate(source) {
     const [exactController, exactRouter, exactStyle] = result;
 
     const codes = [
-      "import { compose, xId, xModifiers } from '@ali/recore';",
+      "import { compose, xId, xModifiers } from '@recore/fx';",
     ];
 
     let args = '';

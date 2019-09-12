@@ -45,7 +45,7 @@ module.exports = function Loaders(argv) {
         {
           use: [
             RECORE_BABEL_LOADER,
-            '@ali/recore-loader', // 这里没有使用 require.resolve，是为了使用项目中安装对版本
+            '@recore/recore-loader', // 这里没有使用 require.resolve，是为了使用项目中安装对版本
           ],
         },
       ],

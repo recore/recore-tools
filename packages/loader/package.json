@@ -68,5 +68,8 @@
     "sinon": "^6.3.1",
     "webpack": "^4.16.1"
   },
-  "gitHead": "144a4e8a793f7703431102fab9c0ec997948321c"
+  "publishConfig":{
+    "access": "public",
+    "registry":"https://registry.npmjs.org/"
+  }
 }

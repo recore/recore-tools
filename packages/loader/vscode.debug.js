@@ -23,9 +23,7 @@ function getTestWebPackConfig(entry, callback) {
       'react-dom': 'var window.ReactDOM',
       react: 'var window.React',
       'prop-types': 'var window.PropTypes',
-      '@ali/recore': 'var window.Recore',
-      'react-router': 'var window.ReactRouterDOM',
-      'react-router-dom': 'var window.ReactRouterDOM',
+      '@recore/fx': 'var window.Recore'
     },
     context: resolve(__dirname),
     watch: true,
