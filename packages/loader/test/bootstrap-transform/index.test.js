@@ -31,7 +31,7 @@ describe('test bootstrap transform', () => {
       expect(err).to.equal(null);
       expect(mockFindAppEntry.called);
       const newSource = result[0];
-      expect(newSource.split('\n')[0]).to.includes('import "@ali/nowa-recore-solution/src/recore-public-path";');
+      expect(newSource.split('\n')[0]).to.includes('import "@recore/solution/src/recore-public-path";');
       expect(newSource.split('\n')[1]).to.include('import \'@babel/polyfill\';');
       expect(newSource.split('\n')[2]).to.include('import { runApp } from \'@ali/recore\'');
       expect(newSource.split('\n')[3]).to.include(`import App from "${MAIN_PATH}?main&basename=%2F"`);

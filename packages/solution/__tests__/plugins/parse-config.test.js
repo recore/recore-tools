@@ -3,7 +3,7 @@ const { START, BUILD } = require('../../src/symbol');
 
 const runner = {};
 const config = {
-  solution: '@ali/nowa-recore-solution',
+  solution: '@recore/solution',
   alias: {
     component: './component',
   },
